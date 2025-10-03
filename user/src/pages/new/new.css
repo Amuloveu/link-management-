@@ -1,0 +1,103 @@
+/* Reset sizing so padding/border don't overflow */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Container */
+.new-link {
+    max-width: 480px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #222;
+}
+
+/* Heading */
+.new-link h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+/* Form */
+.new-link form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Labels */
+.new-link label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: #374151;
+    display: block;
+}
+
+/* Inputs */
+.new-link input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    /* ✅ prevents overflow */
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 0.95rem;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.new-link input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    background: #fff;
+}
+
+/* Button */
+.new-link button {
+    background: #6366f1;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.new-link button:hover {
+    background: #4f46e5;
+}
+
+.new-link button:active {
+    transform: scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .new-link {
+        padding: 1.5rem;
+    }
+
+    .new-link h2 {
+        font-size: 1.4rem;
+    }
+
+    .new-link input,
+    .new-link button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}

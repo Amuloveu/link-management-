@@ -1,0 +1,221 @@
+/* single.css */
+/* ==== Base Layout ==== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+  overflow-x: hidden;
+  color: #111827;
+}
+
+/* ==== Content ==== */
+.content {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+/* ==== Link Info Table ==== */
+.link-info {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+  overflow-x: auto;
+}
+
+.link-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.link-info th,
+.link-info td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.link-info th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.link-info td a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.link-info td a:hover {
+  text-decoration: underline;
+}
+
+/* Status Badge */
+.status-badge {
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-badge.alive {
+  background: #16a34a;
+  color: #fff;
+}
+
+.status-badge.broken {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* Action column */
+.link-info th.action,
+.link-info td.action {
+  text-align: center;
+  width: 140px;
+}
+
+/* Edit Button under table */
+.link-info .edit-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.link-info .edit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ==== Stats Section ==== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* Remove bullets from lists */
+.stat-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stat-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.stat-card li:last-child {
+  border-bottom: none;
+}
+
+.clicks-badge {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 8px;
+  background: #374151;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
+/* Timeline date formatting */
+.timeline-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+}.toggle-text {
+  margin-left: 0.75rem;
+  font-size: 0.8rem;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle-text:hover {
+  text-decoration: underline;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .link-info table {
+    font-size: 1rem;
+  }
+
+  .link-info th,
+  .link-info td {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .link-info .edit-btn {
+    padding: 12px 25px;
+    /* keep desktop size */
+  }
+}

@@ -1,0 +1,141 @@
+.utm-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter', sans-serif;
+}
+
+.utm-page h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #111827;
+}
+
+.created-link input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 1.5rem;
+}
+
+.utm-options h3 {
+    margin-bottom: 0.5rem;
+}
+
+.utm-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.utm-option input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+.generate-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.generate-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.utm-result {
+    margin-top: 2rem;
+}
+
+.utm-link-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.utm-link-item input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+.utm-link-item button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: #10b981;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.utm-link-item button:hover {
+    background: #059669;
+}
+/* ===== Instructions Box ===== */
+.utm-instructions {
+    background: #f9fafb;
+    /* light gray background */
+    border-left: 5px solid #3b82f6;
+    /* blue accent */
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.utm-instructions h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.utm-instructions ol {
+    margin: 0 0 12px 20px;
+    padding: 0;
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.utm-instructions li {
+    margin-bottom: 6px;
+}
+
+.utm-instructions p {
+    margin: 0;
+    font-size: 14px;
+    color: #111827;
+    font-weight: 500;
+}
+
+.utm-instructions b {
+    color: #2563eb;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+
+    .utm-option,
+    .utm-link-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
