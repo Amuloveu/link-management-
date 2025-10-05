@@ -19,7 +19,7 @@ export default function Single() {
   const fetchLink = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`https://localhost:5000/api/links/${linkId}`, {
+      const res = await fetch(`http://localhost:5000/api/links/${linkId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

@@ -10,7 +10,7 @@ export default function Links() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://localhost:5000/api/links/all", {
+    fetch("http://localhost:5000/api/links/all", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

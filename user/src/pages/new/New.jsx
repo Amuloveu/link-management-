@@ -20,7 +20,7 @@ export default function New() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://localhost:5000/api/links/add", // ✅ your backend route
+        "http://localhost:5000/api/links/add", // ✅ your backend route
         formData, {
           headers : {Authorization:`Bearer ${token}`}
         } // important if using JWT cookie auth

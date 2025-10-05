@@ -88,7 +88,7 @@ export default function Dashboard() {
     if (!token) { setError("You must be logged in"); setLoading(false); return; }
     const fetchDashboard = async () => {
       try {
-        const res = await axios.get("https://localhost:5000/api/dashboard", {
+        const res = await axios.get("http://localhost:5000/api/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(res.data);

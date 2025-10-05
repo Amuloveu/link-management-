@@ -68,5 +68,5 @@ cron.schedule("0 * * * * *", async () => {
 const PORT = process.env.PORT || 5000;
 /*https.createServer(httpsOptions, app)*/
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ HTTPS server running at https://localhost:${PORT}`);
+  console.log(`✅ HTTPS server running at http://localhost:${PORT}`);
 });

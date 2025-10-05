@@ -12,7 +12,7 @@ const Edit = () => {
 
   useEffect(() => {
     axios
-      .get(`https://localhost:5000/api/links/${linkId}`, {
+      .get(`http://localhost:5000/api/links/${linkId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -33,7 +33,7 @@ const Edit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`https://localhost:5000/api/links/${linkId}`, linkData, {
+      .put(`http://localhost:5000/api/links/${linkId}`, linkData, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
