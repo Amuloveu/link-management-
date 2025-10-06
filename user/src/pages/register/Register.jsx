@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import './register.css'
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,39 +28,39 @@ export default function Register() {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto", textAlign: "center" }}>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          style={{ width: "100%", padding: "8px", margin: "8px 0" }}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ width: "100%", padding: "8px", margin: "8px 0" }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ width: "100%", padding: "8px", margin: "8px 0" }}
-        />
-        <button type="submit" style={{ padding: "10px 20px" }}>Register</button>
-      </form>
-      {message && <p style={{ marginTop: "10px", color: "green" }}>{message}</p>}
-      <p style={{ marginTop: "10px" }}>
-        Already have an account? <a href="/login">Login</a>
-      </p>
-    </div>
+    <div className="form-container">
+  <h2>Register</h2>
+  <form onSubmit={handleSubmit}>
+    <input
+      type="text"
+      placeholder="Name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      required
+    />
+    <input
+      type="email"
+      placeholder="Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+    />
+    <button type="submit">Register</button>
+  </form>
+  {message && (
+    <p className={message.includes("failed") ? "" : "success"}>{message}</p>
+  )}
+  <p>
+    Already have an account? <a href="/login">Login</a>
+  </p>
+</div>
+
   );
 }

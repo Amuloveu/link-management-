@@ -13,7 +13,7 @@ function checkPremiumStatus(user) {
 
   // Check trial period
   if (user.plan === "trial" && user.trial_end && now <= user.trial_end) {
-    return false; // trial user is not premium
+    return true; // trial user is not premium
   }
 
   return false;
