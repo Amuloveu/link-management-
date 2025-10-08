@@ -5,7 +5,7 @@ const db = mysql.createConnection({
   user: process.env.USER||"root",
   password:process.env.PASSWORD || "",
   database: process.env.DATABASE || "affiliate_saas"
-})
+}) 
 db.connect((err) => {
   if (err) throw err;
   console.log("MySQL connected");
