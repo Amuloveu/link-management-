@@ -3,7 +3,7 @@ import "./hero.css";
 import demo from '../../assets/analytics.png'
 export default function Landing() {
   const [billing, setBilling] = useState("monthly"); // "monthly" or "yearly"
-  const monthly = { price: 25, original: 49, suffix: "/month" };
+  const monthly = { price: 22, original: 49, suffix: "/month" };
   const yearly = { price: 250, original: 590, suffix: "/year" };
 
   const PRICING = billing === "monthly" ? monthly : yearly;
@@ -82,14 +82,14 @@ export default function Landing() {
               </p>
 
               <div className="lm-hero-cta">
-                <a className="lm-btn primary" href="#pricing" onClick={() => setBilling("monthly")}>
+                <a className="lm-btn primary" href="/login" onClick={() => setBilling("monthly")}>
                   Start free trial
                 </a>
                 <a className="lm-btn ghost" href="#features">See features</a>
               </div>
 
               <ul className="lm-hero-stats" aria-hidden>
-                <li><strong>14-day</strong> free trial</li>
+                <li><strong>5day</strong> free trial</li>
                 <li><strong>Trusted</strong> by creators & affiliates</li>
                 <li><strong>500K+</strong> links created</li>
               </ul>
@@ -238,7 +238,7 @@ export default function Landing() {
                   <li>Custom domains</li>
                 </ul>
 
-                <a style={{textAlign:'center',}} className="lm-btn primary large" href="#subscribe">Start free trial</a>
+                <a style={{textAlign:'center',}} className="lm-btn primary large" href="/login">Start free trial</a>
               </div>
 
               <div className="price-card">
