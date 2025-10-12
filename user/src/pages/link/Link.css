@@ -2,7 +2,7 @@
 .links-container {
     flex: 1;
     padding: 20px;
-    background: #f9fafb;
+    background: var(--bg);
     min-height: 100vh;
     margin-top: 50px;
 }
@@ -10,10 +10,10 @@
 /* ===== Table Wrapper ===== */
 .table-container {
     overflow-x: auto;
-    background-color: #fff;
-    border-radius: 16px;
+    background-color: var(--panel);
+    border-radius: var(--radius);
     padding: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow);
 }
 
 /* ===== Table ===== */
@@ -21,6 +21,7 @@
     width: 100%;
     border-collapse: collapse;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
 }
 
 .links-table th,
@@ -30,25 +31,27 @@
 }
 
 .links-table th {
-    color: #374151;
+    color: var(--muted);
     font-weight: 600;
     font-size: 15px;
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .links-table td {
-    color: #111827;
+    color: var(--text);
     font-size: 14px;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .links-table tbody tr {
-    transition: background 0.2s;
+    transition: background 0.2s, box-shadow 0.2s;
     cursor: pointer;
 }
 
 .links-table tbody tr:hover {
-    background: #f9fafb;
+    background: rgba(0, 255, 170, 0.05);
+    /* subtle neon hover */
+    box-shadow: 0 4px 12px rgba(0, 255, 170, 0.2);
 }
 
 /* ===== Status Badge ===== */
@@ -61,25 +64,25 @@
 }
 
 .status.ok {
-    background: #dcfce7;
-    color: #15803d;
+    background: rgba(0, 255, 170, 0.2);
+    color: #00ffaa;
 }
 
 .status.broken {
-    background: #fee2e2;
-    color: #b91c1c;
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff4d4f;
 }
+
 .edit-icon {
-  cursor: pointer;
-  color: #007bff;
-  font-size: 18px;
-  transition: color 0.2s;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 18px;
+    transition: color 0.2s;
 }
 
 .edit-icon:hover {
-  color: #0056b3;
+    color: #00ffcc;
 }
-
 
 /* ===== Responsive (Cards on Mobile) ===== */
 @media (max-width: 768px) {
@@ -99,10 +102,10 @@
     }
 
     .links-table tr {
-        background: #fff;
+        background: var(--panel);
         margin-bottom: 16px;
-        border-radius: 12px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        border-radius: var(--radius);
+        box-shadow: 0 2px 6px rgba(0, 255, 170, 0.1);
         padding: 12px;
     }
 
@@ -117,7 +120,7 @@
     .links-table td::before {
         content: attr(data-label);
         font-weight: 600;
-        color: #6b7280;
+        color: var(--muted);
         margin-right: 10px;
     }
 }

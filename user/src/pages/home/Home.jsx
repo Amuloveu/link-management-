@@ -128,6 +128,7 @@ export default function Dashboard() {
         <div className="widgets">
           <Widget type="clicks" amount={data.todayClicks} />
           <Widget type="month" amount={data.monthClicks} />
+          <Widget type="allClicks" amount={49} />
           <Widget type="links" amount={data.totalLinks} />
         </div>
 

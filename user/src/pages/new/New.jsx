@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './new.css'
+import Sidebar from "../../component/sidebar/Sidebar";
 export default function New() {
   const [formData, setFormData] = useState({
     title: "",
@@ -37,6 +38,7 @@ navigate("/links/utm", { state: { link: shareable, linkId: res.data.link?.id } }
 
   return (
     <div className="new-link">
+      <Sidebar/>
       <h2>Add New Link</h2>
       <form onSubmit={handleSubmit}>
         <div>

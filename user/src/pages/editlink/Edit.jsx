@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "./edit.css"; // Import the CSS
+import Sidebar from "../../component/sidebar/Sidebar";
 
 const Edit = () => {
   const { linkId } = useParams();
@@ -55,6 +56,7 @@ const Edit = () => {
 
   return (
     <div className="container">
+      <Sidebar/>
       <div className="card">
         <h2>Edit Link</h2>
         <form onSubmit={handleSubmit}>

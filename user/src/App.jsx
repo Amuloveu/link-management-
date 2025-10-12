@@ -5,7 +5,7 @@ import Register from "./pages/register/Register";
 import New from "./pages/new/New";
 import Single from "./pages/single/Single";
 import Links from "./pages/link/Links";
-import Hero from "./pages/Hero";
+import Landing from "./pages/landing/Landing";
 import VerifyPage from './VerifyPage';
 import SuccessPage from './SuccessPage'
 import Pay from "./Pay";
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" >
-        <Route index element={<Hero />} />
+        <Route index element={<Landing />} />
         <Route path="dashboard" element={<ProtectedRoute>
           <Dashboard/>
         </ProtectedRoute>}/>

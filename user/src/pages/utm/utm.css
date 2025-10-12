@@ -1,29 +1,37 @@
 .utm-page {
     max-width: 800px;
+    
     margin: 2rem auto;
-    background: #fff;
+    margin-top: 90px;
+    background: var(--panel);
+    /* dark panel */
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 255, 170, 0.08);
+    /* neon glow */
     font-family: 'Inter', sans-serif;
+    color: var(--text);
 }
 
 .utm-page h1 {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
-    color: #111827;
+    color: var(--accent);
 }
 
 .created-link input {
     width: 100%;
     padding: 0.6rem 1rem;
     border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
     margin-bottom: 1.5rem;
 }
 
 .utm-options h3 {
     margin-bottom: 0.5rem;
+    color: var(--accent);
 }
 
 .utm-option {
@@ -38,14 +46,16 @@
     flex: 1;
     padding: 0.5rem;
     border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
 }
 
 .generate-btn {
     margin-top: 1rem;
     padding: 0.6rem 1.5rem;
-    background: #3b82f6;
-    color: #fff;
+    background: linear-gradient(90deg, var(--accent), #00d9b0);
+    color: #00110b;
     border: none;
     border-radius: 12px;
     font-weight: 600;
@@ -54,7 +64,7 @@
 }
 
 .generate-btn:hover {
-    background: #2563eb;
+    background: linear-gradient(90deg, #00d9b0, var(--accent));
     transform: translateY(-2px);
 }
 
@@ -73,44 +83,46 @@
     flex: 1;
     padding: 0.5rem;
     border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
 }
 
 .utm-link-item button {
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background: #10b981;
-    color: #fff;
+    background: var(--accent);
+    color: #00110b;
     border: none;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
 .utm-link-item button:hover {
-    background: #059669;
+    background: #00d9b0;
 }
+
 /* ===== Instructions Box ===== */
 .utm-instructions {
-    background: #f9fafb;
-    /* light gray background */
-    border-left: 5px solid #3b82f6;
-    /* blue accent */
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 5px solid var(--accent);
     padding: 16px 20px;
     border-radius: 12px;
     margin-bottom: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 255, 170, 0.05);
 }
 
 .utm-instructions h3 {
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 18px;
-    color: #1f2937;
+    color: var(--accent);
 }
 
 .utm-instructions ol {
     margin: 0 0 12px 20px;
     padding: 0;
-    color: #374151;
+    color: #8b949e;
     font-size: 15px;
     line-height: 1.6;
 }
@@ -122,12 +134,12 @@
 .utm-instructions p {
     margin: 0;
     font-size: 14px;
-    color: #111827;
+    color: var(--text);
     font-weight: 500;
 }
 
 .utm-instructions b {
-    color: #2563eb;
+    color: var(--accent);
 }
 
 /* Responsive */

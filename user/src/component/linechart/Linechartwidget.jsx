@@ -106,7 +106,6 @@
 //     </div>
 //   );
 // }
-
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import {
   VictoryChart,
@@ -152,11 +151,8 @@ export default function LineChartWidget({ timeline }) {
   const rangeMap = { "7d": 7, "30d": 30, "1y": 365, all: data.length };
   const visibleData = data.slice(-rangeMap[range]);
 
-  // Dynamic point width to fit chart into container
-  const pointWidth = Math.min(60, containerWidth / visibleData.length);
   const chartWidth = containerWidth;
-
-  const COLORS = { clicks: "#4caf50", links: "#2196f3" };
+  const COLORS = { clicks: "var(--accent)", links: "#2196f3" };
 
   return (
     <div style={{ width: "100%" }} ref={containerRef}>
@@ -171,19 +167,33 @@ export default function LineChartWidget({ timeline }) {
               padding: "6px 12px",
               borderRadius: 4,
               border: "1px solid #ccc",
-              background: range === r ? "#4caf50" : "#fff",
-              color: range === r ? "#fff" : "#333",
+              background: range === r ? "var(--accent)" : "var(--panel)",
+              color: range === r ? "#00110b" : "var(--text)",
               cursor: "pointer",
               transition: "all 0.2s",
             }}
           >
-            {r === "7d" ? "Last 7 Days" : r === "30d" ? "Last 30 Days" : r === "1y" ? "Last Year" : "Lifetime"}
+            {r === "7d"
+              ? "Last 7 Days"
+              : r === "30d"
+              ? "Last 30 Days"
+              : r === "1y"
+              ? "Last Year"
+              : "Lifetime"}
           </button>
         ))}
       </div>
 
       {/* Chart */}
-      <div style={{ overflowX: "auto", border: "1px solid #eee", borderRadius: 8, padding: 8 }}>
+      <div
+        style={{
+          overflowX: "auto",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: 8,
+          padding: 8,
+          background: "var(--panel)",
+        }}
+      >
         <VictoryChart
           width={chartWidth}
           height={350}
@@ -204,9 +214,18 @@ export default function LineChartWidget({ timeline }) {
             tickFormat={(t) =>
               t instanceof Date ? t.toLocaleDateString("en-US", { month: "short", day: "numeric" }) : ""
             }
-            style={{ tickLabels: { angle: -25, fontSize: 10, padding: 6 }, grid: { stroke: "#f5f5f5" } }}
+            style={{
+              tickLabels: { angle: -25, fontSize: 10, padding: 6, fill: "var(--text)" },
+              grid: { stroke: "rgba(255,255,255,0.05)" },
+            }}
           />
-          <VictoryAxis dependentAxis style={{ tickLabels: { fontSize: 10, fill: "#555" }, grid: { stroke: "#f5f5f5" } }} />
+          <VictoryAxis
+            dependentAxis
+            style={{
+              tickLabels: { fontSize: 10, fill: "var(--text)" },
+              grid: { stroke: "rgba(255,255,255,0.05)" },
+            }}
+          />
 
           <VictoryLine
             data={visibleData}
@@ -229,7 +248,7 @@ export default function LineChartWidget({ timeline }) {
           {Object.entries(COLORS).map(([key, color]) => (
             <div key={key} style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <div style={{ width: 14, height: 14, background: color, borderRadius: 4 }} />
-              <span style={{ fontSize: 12, fontWeight: 500, color: "#333" }}>
+              <span style={{ fontSize: 12, fontWeight: 500, color: "var(--text)" }}>
                 {key.charAt(0).toUpperCase() + key.slice(1)}
               </span>
             </div>

@@ -1,3 +1,134 @@
+// /* Dashboard layout */
+// .dashboard-layout {
+//   display: flex;
+//   min-height: 100vh;
+//   position: relative;
+// }
+
+// .dashboard {
+//   flex: 1;
+//   padding: 20px;
+//   background: #f9fafb;
+//   transition: margin-left 0.3s;
+//   margin-top: 55px;
+// }
+
+// /* Widgets row */
+// .widgets {
+//   display: flex;
+//   gap: 1.5rem;
+//   flex-wrap: wrap;
+//   margin-bottom: 2rem;
+// }
+
+// /* Middle section */
+// .middle {
+//   display: flex;
+//   gap: 2rem;
+//   flex-wrap: wrap;
+//   margin-bottom: 2rem;
+// }
+
+// /* Left box */
+// .left {
+//   flex: 1 1 400px;
+//   background: #fff;
+//   padding: 1.5rem;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+// }
+
+// /* Table styles */
+// .last-links {
+//   width: 100%;
+//   border-collapse: collapse;
+
+//   th, td {
+//     padding: 0.75rem 0.5rem;
+//     border-bottom: 1px solid #e5e7eb;
+//     text-align: left;
+//     font-size: 0.95rem;
+//   }
+
+//   th {
+//     font-weight: 600;
+//     background: #f3f4f6;
+//   }
+
+//   tr:hover td {
+//     background: #f9fafb;
+//   }
+// }
+
+// /* Right box */
+// .right {
+//   flex: 1 1 350px;
+//   background: #fff;
+//   padding: 1.5rem;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+// }
+
+// /* Chart */
+// .linechart {
+//   background: #fff;
+//   padding: 1.5rem;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+//   margin-top: 2rem;
+//   width: 100%;
+//   overflow-x: auto;
+// }
+
+// /* Pay popup */
+// .pay-popup {
+//   position: fixed;
+//   top: 0; left: 0;
+//   width: 100%; height: 100%;
+//   background: rgba(0,0,0,0.5);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 9999;
+
+//   .popup-content {
+//     background: #fff;
+//     padding: 2rem;
+//     border-radius: 12px;
+//     text-align: center;
+//     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+//   }
+
+//   button {
+//     padding: 0.75rem 2rem;
+//     background: #3b82f6;
+//     color: #fff;
+//     border: none;
+//     border-radius: 6px;
+//     cursor: pointer;
+//     transition: background 0.2s;
+
+//     &:hover {
+//       background: #2563eb;
+//     }
+//   }
+// }
+
+// /* Responsive */
+// @media (max-width: 1024px) {
+//   .dashboard {
+//     margin-left: 0;
+//     padding: 10px;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .widgets { flex-direction: column; gap: 1rem; }
+//   .middle { flex-direction: column; gap: 1rem; }
+//   .left, .right { flex: 1 1 100%; }
+//   .linechart { padding: 10px; }
+// }
+
 /* Dashboard layout */
 .dashboard-layout {
   display: flex;
@@ -8,9 +139,11 @@
 .dashboard {
   flex: 1;
   padding: 20px;
-  background: #f9fafb;
+  background: var(--bg);
+  /* dark background */
   transition: margin-left 0.3s;
   margin-top: 55px;
+  color: var(--text);
 }
 
 /* Widgets row */
@@ -32,86 +165,97 @@
 /* Left box */
 .left {
   flex: 1 1 400px;
-  background: #fff;
+  background: var(--panel);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 255, 170, 0.12);
+  color: var(--text);
 }
 
 /* Table styles */
 .last-links {
   width: 100%;
   border-collapse: collapse;
+}
 
-  th, td {
-    padding: 0.75rem 0.5rem;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
-    font-size: 0.95rem;
-  }
+.last-links th,
+.last-links td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--text);
+}
 
-  th {
-    font-weight: 600;
-    background: #f3f4f6;
-  }
+.last-links th {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--accent);
+}
 
-  tr:hover td {
-    background: #f9fafb;
-  }
+.last-links tr:hover td {
+  background: rgba(0, 255, 170, 0.03);
 }
 
 /* Right box */
 .right {
   flex: 1 1 350px;
-  background: #fff;
+  background: var(--panel);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 255, 170, 0.12);
+  color: var(--text);
 }
 
 /* Chart */
 .linechart {
-  background: #fff;
+  background: var(--panel);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 255, 170, 0.12);
   margin-top: 2rem;
   width: 100%;
   overflow-x: auto;
+  color: var(--text);
 }
 
 /* Pay popup */
 .pay-popup {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
 
-  .popup-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
+.pay-popup .popup-content {
+  background: var(--panel);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 255, 170, 0.15);
+  color: var(--text);
+}
 
-  button {
-    padding: 0.75rem 2rem;
-    background: #3b82f6;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
+.pay-popup .popup-content button {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, var(--accent), #00d9b0);
+  color: #00110b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 18px rgba(0, 255, 170, 0.2);
+}
 
-    &:hover {
-      background: #2563eb;
-    }
-  }
+.pay-popup .popup-content button:hover {
+  background: linear-gradient(90deg, #00d9b0, var(--accent));
+  box-shadow: 0 8px 24px rgba(0, 255, 170, 0.3);
 }
 
 /* Responsive */
@@ -123,8 +267,22 @@
 }
 
 @media (max-width: 768px) {
-  .widgets { flex-direction: column; gap: 1rem; }
-  .middle { flex-direction: column; gap: 1rem; }
-  .left, .right { flex: 1 1 100%; }
-  .linechart { padding: 10px; }
+  .widgets {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .left,
+  .right {
+    flex: 1 1 100%;
+  }
+
+  .linechart {
+    padding: 10px;
+  }
 }

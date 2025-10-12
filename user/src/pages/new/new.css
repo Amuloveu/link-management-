@@ -11,11 +11,14 @@
     width: 90%;
     margin: 2rem auto;
     padding: 2rem;
-    background: #ffffff;
+    background: var(--panel);
+    /* dark panel */
     border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 16px rgba(0, 255, 170, 0.08);
+    /* subtle neon glow */
     font-family: "Inter", "Segoe UI", sans-serif;
-    color: #222;
+    color: var(--text);
+    /* light text */
 }
 
 /* Heading */
@@ -24,7 +27,8 @@
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: #111827;
+    color: var(--accent);
+    /* neon accent */
 }
 
 /* Form */
@@ -39,7 +43,8 @@
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
-    color: #374151;
+    color: var(--muted);
+    /* muted text */
     display: block;
 }
 
@@ -48,37 +53,42 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    /* ✅ prevents overflow */
     padding: 0.75rem 1rem;
     border-radius: 8px;
-    border: 1px solid #d1d5db;
-    background: #f9fafb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* subtle light border */
+    background: rgba(255, 255, 255, 0.03);
+    /* dark translucent */
+    color: var(--text);
     font-size: 0.95rem;
-    transition: border 0.2s, box-shadow 0.2s;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .new-link input:focus {
     outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
-    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 255, 170, 0.25);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Button */
 .new-link button {
-    background: #6366f1;
-    color: #fff;
+    background: linear-gradient(90deg, var(--accent), #00d9b0);
+    color: #00110b;
+    /* dark text inside neon button */
     font-size: 1rem;
     font-weight: 600;
     padding: 0.8rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 6px 18px rgba(0, 255, 170, 0.2);
 }
 
 .new-link button:hover {
-    background: #4f46e5;
+    background: linear-gradient(90deg, #00d9b0, var(--accent));
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.3);
 }
 
 .new-link button:active {

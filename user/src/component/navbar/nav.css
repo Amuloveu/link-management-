@@ -1,0 +1,185 @@
+/* --- Navigation --- */
+:root {
+    /* Updated dark colors for better eye comfort (Slate-950 to Near-Black) */
+    --color-dark-bg: #12121e;
+    /* Deep Charcoal/Indigo */
+    --color-dark-primary: #0a0a14;
+    /* Near-Black for footer/top sections */
+
+    /* Text Colors */
+    --color-text-light: #f1f5f9;
+    /* Near-White */
+    --color-text-medium: #a0a7b4;
+    /* Light Gray/Slate */
+    --color-text-dark: #1e293b;
+    /* Dark Slate for button text */
+
+    /* Brand Accent Colors - Slightly more vibrant */
+    --color-highlight-green: #38ed90;
+    /* Brighter Emerald/Mint */
+    --color-highlight-blue: #55c4ff;
+    /* Brighter Sky Blue */
+    --color-highlight-yellow: #fcd34d;
+      :root {
+    /* Updated dark colors for better eye comfort (Slate-950 to Near-Black) */
+    --color-dark-bg: #12121e; /* Deep Charcoal/Indigo */
+    --color-dark-primary: #0a0a14; /* Near-Black for footer/top sections */
+    
+    /* Text Colors */
+    --color-text-light: #f1f5f9; /* Near-White */
+    --color-text-medium: #a0a7b4; /* Light Gray/Slate */
+    --color-text-dark: #1e293b; /* Dark Slate for button text */
+
+    /* Brand Accent Colors - Slightly more vibrant */
+    --color-highlight-green: #38ed90; /* Brighter Emerald/Mint */
+    --color-highlight-blue: #55c4ff; /* Brighter Sky Blue */
+    --color-highlight-yellow: #fcd34d; 
+    
+    /* New: Shadow Color (subtle blue glow for dark mode) */
+    --shadow-color: rgba(56, 237, 144, 0.2); 
+
+    /* New: Shadow Color (subtle blue glow for dark mode) */
+    --shadow-color: rgba(56, 237, 144, 0.2);
+}
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Increased z-index to ensure it sits above all content */
+    backdrop-filter: blur(8px);
+    background-color: rgba(10, 10, 20, 0.85); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--color-highlight-blue), var(--color-highlight-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--color-dark-primary);
+    font-size: 1.1rem;
+}
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ------------------- DESKTOP STYLES ------------------- */
+.nav-links-desktop {
+    display: none; /* Hide desktop links by default (mobile-first) */
+    gap: 32px;
+}
+.btn-desktop {
+    display: none; /* Hide desktop CTA on mobile */
+}
+
+/* Show desktop styles only on larger screens */
+@media (min-width: 768px) {
+    .nav-links-desktop {
+        display: flex; /* Show links */
+    }
+    .btn-desktop {
+        display: block; /* Show desktop CTA */
+    }
+    .menu-icon, .menu-toggle {
+        display: none !important; /* Hide mobile menu toggle */
+    }
+}
+
+/* ------------------- MOBILE STYLES ------------------- */
+.menu-toggle {
+    display: none; /* Hide the actual checkbox input */
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 110; /* Ensure icon is clickable above menu */
+}
+
+.menu-icon .bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-menu-bar);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Transformation for the X icon when checked */
+.menu-toggle:checked ~ .menu-icon .bar:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+.menu-toggle:checked ~ .menu-icon .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg); /* Rotate top bar */
+}
+.menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg); /* Rotate bottom bar */
+}
+
+/* Mobile Navigation Menu */
+.nav-links-mobile {
+    /* Initial state: off-screen and hidden */
+    position: absolute;
+    top: 100%; /* Position it right below the header */
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 0; /* Key for transition, initially collapsed */
+    background-color: var(--color-dark-primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    
+    /* Layout for links */
+    display: flex; 
+    flex-direction: column;
+    padding: 0 24px; /* Padding for mobile view */
+    transition: max-height 0.3s ease-in-out; 
+    z-index: 90;
+}
+
+/* Show menu when checkbox is checked */
+.menu-toggle:checked ~ .nav-links-mobile {
+    max-height: 500px; /* Large enough value to reveal content */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nav-links-mobile .nav-link {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+.nav-links-mobile .nav-link:last-of-type {
+    border-bottom: none;
+}
+
+/* Mobile CTA button inside the menu */
+.btn-mobile {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    /* Use the standard btn-primary styles */
+}}

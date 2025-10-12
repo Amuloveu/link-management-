@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import './utm.css'
+import Sidebar from "../../component/sidebar/Sidebar";
 
 export default function Utm() {
   const location = useLocation();
@@ -50,7 +51,10 @@ export default function Utm() {
   };
 
   return (
+    <>
+     <Sidebar/>
     <div className="utm-page">
+     
       <h1>UTM Link Creator</h1>
 
       {/* Instructions */}
@@ -126,6 +130,6 @@ export default function Utm() {
           ))}
         </div>
       )}
-    </div>
+    </div></>
   );
 }
